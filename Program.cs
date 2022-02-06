@@ -4,16 +4,23 @@ namespace task_6_5_2
 {
     class Triangle
     {
-        public double sideA;
-        public double sideB;
-        public double sideC;
+        //public double sideA;
+        //public double sideB;
+        //public double sideC;
+        private double sideA;
+        private double sideB;
+        private double sideC;
 
-        public Triangle(double a, double b, double c)
-        {
-            sideA = a;
-            sideB = b;
-            sideC = c;
-        }
+        public double A { get{ return sideA; } set{ sideA = value; } }
+        public double B { get { return sideB; } set { sideB = value; } }
+        public double C { get { return sideC; } set { sideC = value; } }
+
+        //public Triangle(double a, double b, double c)
+        //{
+        //    sideA = a;
+        //    sideB = b;
+        //    sideC = c;
+        //}
 
         public double FindThePerimeter()
         {
@@ -33,12 +40,15 @@ namespace task_6_5_2
 
     class Circle
     {
-        public double radius;
-        
-        public Circle(double r)
-        {
-            radius = r;            
-        }
+        //public double radius;
+        private double radius;
+
+        //public Circle(double r)
+        //{
+        //    radius = r;            
+        //}
+
+        public double Radius { get { return radius; } set { radius = value; } }
 
         public double FindTheLengthOfTheCircle()
         {
@@ -57,12 +67,15 @@ namespace task_6_5_2
 
     class Square
     {
-        public double sideOfTheSquare;
+        //public double sideOfTheSquare;
+        private double sideOfTheSquare;
 
-        public Square(double a)
-        {
-            sideOfTheSquare = a;
-        }
+        //public Square(double a)
+        //{
+        //    sideOfTheSquare = a;
+        //}
+
+        public double Side { get { return sideOfTheSquare; } set { sideOfTheSquare = value; } }
 
         public double FindThePerimeter()
         {
@@ -83,24 +96,33 @@ namespace task_6_5_2
     {
         static void Main()
         {
-            Console.Write("Введите 1-ю сторону треугольника - ");
-            double a = double.Parse(Console.ReadLine());
-            Console.Write("Введите 2-ю сторону треугольника - ");
-            double b = double.Parse(Console.ReadLine());
-            Console.Write("Введите 3-ю сторону треугольника - ");
-            double c = double.Parse(Console.ReadLine());
+            Triangle tr = new Triangle();
+            Circle cr = new Circle();
+            Square sq = new Square();
 
-            Triangle tr = new Triangle(a, b, c);
+            Console.Write("Введите 1-ю сторону треугольника - ");
+            //double a = double.Parse(Console.ReadLine());
+            tr.A = double.Parse(Console.ReadLine());
+            Console.Write("Введите 2-ю сторону треугольника - ");
+            //double b = double.Parse(Console.ReadLine());
+            tr.B = double.Parse(Console.ReadLine());
+            Console.Write("Введите 3-ю сторону треугольника - ");
+            //double c = double.Parse(Console.ReadLine());
+            tr.C = double.Parse(Console.ReadLine());
+
+            //Triangle tr = new Triangle(a, b, c);            
 
             Console.Write("Введите радиус круга - ");
-            double r = double.Parse(Console.ReadLine());
+            //double r = double.Parse(Console.ReadLine());
+            cr.Radius = double.Parse(Console.ReadLine());
 
-            Circle cr = new Circle(r);
+            //Circle cr = new Circle(r);
 
             Console.Write("Введите сторону квадрата - ");
-            double d = double.Parse(Console.ReadLine());
+            //double d = double.Parse(Console.ReadLine());
+            sq.Side = double.Parse(Console.ReadLine());
 
-            Square sq = new Square(d);
+            //Square sq = new Square(d);
 
             Console.WriteLine("Периметр треугольника {0:f1}", tr.FindThePerimeter());
             Console.WriteLine("Площадь треугольника {0:f1}", tr.FindTheArea());
